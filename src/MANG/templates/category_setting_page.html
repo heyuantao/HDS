@@ -1,0 +1,31 @@
+{% extends "management_base.html" %}
+
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>产品整体分类（只能设置五个）</strong>
+    </div>
+    <div class="panel-body">
+        <form method='post' action='{% url "category_setting" %}' class="form-horizontal">{% csrf_token %}
+            <div style="margin-top:20px"></div>
+        	{{formset.management_form}}
+        	{% for form in formset %}
+	        	<div class="form-group">
+		        	<label for="{{form.category_name.label}}" class="col-xs-2 control-label">类别名称{{forloop.counter}}:</label>
+		        	<div class="col-xs-3">
+		        		<input type="text" class="form-control" id="{{form.category_name.label}}" name="form-{{forloop.counter0}}-category_name" value="{{form.category_name.value}}"/>
+		        		<input type='hidden' name="form-{{forloop.counter0}}-id" value="{{form.id.value}}" />
+		        		{{form.category_name.errors|striptags}}
+		        	</div>
+		        </div>
+        	{% endfor %}
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-primary">保存</button>
+                    <a href='{% url 'base_page' %}' class="btn btn-default">返回</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

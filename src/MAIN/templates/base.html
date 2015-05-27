@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <!--begin百度搜索引擎代码-->
+		<script>
+		var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?842f27d474d473e7a49ae3f225575bca";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+    <!--end百度搜索引擎代码-->
+{% load staticfiles %}
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="baidu-site-verification" content="YXHZMhGJy1" />
+    <title>郑州蝴蝶山食品有限公司</title>
+    <link href="{{MEDIA_URL}}css/base.css" rel="stylesheet" type="text/css">
+    {% block cssjs_files %}
+      <!--load the css and js file-->
+    {% endblock %}
+</head>
+<body>
+    <div class="header">
+        <div class="headerBox">
+            <div class="logo">
+                <img src="{{MEDIA_URL}}images/logo.gif" alt="logo">
+            </div><!--logo end-->
+            <div class="nav">
+                <div class="favorate">
+                    <ul>
+                        <li><a href="#" id="bookMarkMe">加入收藏</a></li><!--set js code-->
+                        <li><a href="#" id="setHomePage">设为首页</a></li>
+                    </ul>
+                </div>
+                <ul class="menu">
+                    <li><a href="{% url 'contact_us' %}">联系我们</a></li><!--contract_us-->
+                    <li><a href="{% url 'products_category'  %}">主要产品</a></li><!--products-->
+                    <li><a href="{% url 'about_us' %}">走进蝴蝶山</a></li><!--about_us-->
+                    <li><a href="{% url 'home' %}">网站首页</a></li><!--home-->
+                </ul>
+            </div><!-- nav end -->
+        </div><!--end nav-->
+        <div class="headerSpliter"></div>
+    </div><!--header end-->
+    
+    {% block main %}
+    {% endblock %}
+    
+    <div class="footer">
+        <div class="footerLeft">
+            <p>Copy right 2014
+                <a href="http://www.hudieshanfood.com" class="red">郑州蝴蝶山食品有限公司</a>
+                <a href="http://www.miitbeian.gov.cn/" class="gray">豫ICP备15006993号</a>
+            </p>
+        </div>
+        <div class="footerRight">
+            <p>联系电话为：0371-64686892</p>
+        </div>
+    </div><!--footer end-->
+</body>
+<script>
+    $(document).ready(function() {
+        $("#bookMarkMe").click(function () {
+            if (window.sidebar) { // Mozilla Firefox Bookmark
+                window.sidebar.addPanel(location.href, document.title, "");
+            } else if (window.external) { // IE Favorite
+                window.external.AddFavorite(location.href, document.title);
+            }
+            else if (window.opera && window.print) { // Opera Hotlist
+                this.title = document.title;
+                return true;
+            }
+        })
+        $("#setHomePage").click(function(){
+            var url = this.href;
+            try {
+                this.style.behavior = "url(#default#homepage)";
+                this.setHomePage(url);
+            } catch (e) {
+                if (document.all) {
+                    document.body.style.behavior="url(#default#homepage)";
+                    document.body.setHomePage(url);
+                } else if (window.sidebar) {
+                    if (window.netscape) {
+                        try {
+                            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                        } catch (e) {
+                            alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signedebase_principal_support]的值设置为'true',双击即可。");
+                            return false;
+                        }
+                    }
+                    var prefs = Components.classes["/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+                    prefs.setCharPref('browser.startup.homepage',url);
+                } else {
+                    //alert('您的浏览器不支持自动设置首页, 使用浏览器菜单或在浏览器地址栏输入“chrome://settings/browser”手动设置!');
+                    $("#sethomepage").href();
+                }
+            }
+            return false;
+        });
+    })
+</script>
+</html>

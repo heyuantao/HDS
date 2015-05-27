@@ -1,0 +1,40 @@
+{% extends "management_base.html" %}
+
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>商品信息设置</strong>
+    </div>
+    <div class="panel-body">
+        <form method="post" action="{% url 'product_detail_list' %}"><!--#will be replace to remove function-->
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-sm btn-danger pull-right" name='action' value="delete" style="margin-bottom: 10px">删除</button>
+                <button type="submit" class="btn btn-sm btn-warning pull-right" name='action' value="edit" style="margin-bottom: 10px">编辑</button>
+                <a href="{% url 'product_detail_add' %}" class="btn btn-sm btn-primary pull-right" style="margin-bottom: 10px">添加</a>
+            </div>
+            <div class="col-xs-12">
+                <table class="table table-condensed table-bordered table-striped">
+                <thead>
+                <th>选择</th>
+                <th>商品名称</th>
+                <th>类别</th>
+                <th>净含量</th>
+                <th>保质期</th>
+                </thead>
+                <tbody>
+                {% for item in product_detail_list %}
+                <tr>
+                    <td><input type="checkbox" name="items" value="{{item.id}}"/></td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.category.category_name}}</td>
+                    <td>{{item.net_content}}</td>
+                    <td>{{item.warranty_period}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/MAIN/models.py=utf-8
+encoding//src/MAIN/views.py=utf-8
+encoding//src/MANG/forms.py=utf-8
+encoding//src/MANG/templatetags/urltags.py=utf-8
+encoding//src/MANG/views.py=utf-8
+encoding//src/WX/receivedWeiXin.py=utf-8
+encoding//src/WX/receivedWeiXinEvent.py=utf-8
+encoding//src/WX/receivedWeiXinMsg.py=utf-8
+encoding//src/WX/views.py=utf-8

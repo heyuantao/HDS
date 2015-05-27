@@ -1,0 +1,93 @@
+.content{
+  width: 1000px;
+  margin: 0px auto;
+}
+.link{
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter{
+  .content;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+
+.main{
+  .content;
+  .every_page_pic{
+    height: 100px;
+    img{
+      height: 90px;
+      width: 1000px;
+      box-shadow: 3px 3px 3px;
+    }
+  }
+  .mainSpliter{
+    .Spliter;
+  }
+  .context{
+    @title-font-size:19px;
+    @text-font-size:17px;
+    .image_size {height: 340px;width: 248px;}
+    margin-top: 10px;
+    .part_left{
+      overflow: hidden;
+      margin-bottom: 30px;
+      .desc{
+        width: 730px;
+        float: left;
+        padding-right: 20px;
+        .title{
+          font-size:@title-font-size;
+          margin-bottom: 15px;
+          font-weight: bolder;
+          .red{
+            color: red;
+          }
+        }
+        .text{
+          font-size: @text-font-size;
+          text-indent: 2em;
+          line-height: 30px;
+        }
+      }
+      .img{
+        float: left;
+        .image_size;
+        border: 1px solid #808080;
+      }
+    }
+    .part_right{
+      overflow: hidden;
+      margin-bottom: 30px;
+      .img{
+        float: left;
+        .image_size;
+        border: 1px solid #808080;
+      }
+      .desc{
+        width: 730px;
+        float: right;
+        .title{
+          margin-bottom: 15px;
+          float:left;
+          font-size:@title-font-size;
+          font-weight: bold;
+          .red{
+            color: #dd040f;
+          }
+        }
+        .text{
+          clear:both;
+          text-indent: 2em;
+          line-height: 30px;
+          font-size: @text-font-size;
+        }
+      }
+
+    }
+  }
+}

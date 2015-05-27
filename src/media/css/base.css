@@ -1,0 +1,139 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+.content {
+  width: 1000px;
+  margin: 0px auto;
+}
+.link {
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+.header {
+  /*
+  .topBar{
+    .content;
+    //background-color: rgba(202, 202, 202, 0.55);
+    height: 24px;
+    li{
+      a{
+        .link;
+        color: gray;
+      }
+      margin: 0px 10px;
+      float: right;
+      line-height: 24px;
+      list-style-type: none;
+    }
+  }*/
+  /*
+  .headerSpliter{
+    .content;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 1px;
+    border-bottom: 1px solid gray;
+  }*/
+}
+.header .headerBox {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 2px;
+  height: 60px;
+}
+.header .headerBox .logo {
+  float: left;
+  height: 60px;
+}
+.header .headerBox .logo img {
+  height: 60px;
+}
+.header .headerBox .nav {
+  float: right;
+}
+.header .headerBox .nav .favorate {
+  float: right;
+}
+.header .headerBox .nav .favorate li {
+  float: right;
+  line-height: 11px;
+  height: 11px;
+  list-style-type: none;
+  margin-right: 10px;
+}
+.header .headerBox .nav .favorate li a {
+  font-size: 11px;
+  text-decoration: none;
+  color: gray;
+}
+.header .headerBox .nav .menu {
+  height: 60px;
+  line-height: 60px;
+  clear: both;
+}
+.header .headerBox .nav .menu li {
+  list-style-type: none;
+  margin: 0px 14px;
+  float: right;
+}
+.header .headerBox .nav .menu li a {
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bolder;
+  /*
+            color: #ffffff;
+            background: #e61319;
+            */
+}
+.header .headerBox .nav .menu li a:hover {
+  /*
+            color: yellow;
+            background: #e61319;
+            */
+}
+.header .headerSpliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+.footer {
+  width: 1000px;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  color: gray;
+  font-size: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+.footer .footerLeft {
+  float: left;
+}
+.footer .footerLeft .red {
+  text-decoration: none;
+  color: red;
+}
+.footer .footerLeft .gray {
+  text-decoration: none;
+  color: #808080;
+}
+.footer .footerRight {
+  float: right;
+  padding-left: 20px;
+  background: url(../images/icons/tel.jpg) no-repeat left center;
+}

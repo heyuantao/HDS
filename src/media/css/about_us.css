@@ -1,0 +1,101 @@
+.content {
+  width: 1000px;
+  margin: 0px auto;
+}
+.link {
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+.main {
+  width: 1000px;
+  margin: 0px auto;
+}
+.main .every_page_pic {
+  height: 100px;
+}
+.main .every_page_pic img {
+  height: 90px;
+  width: 1000px;
+  box-shadow: 3px 3px 3px;
+}
+.main .mainSpliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+.main .context {
+  margin-top: 10px;
+}
+.main .context .image_size {
+  height: 340px;
+  width: 248px;
+}
+.main .context .part_left {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.main .context .part_left .desc {
+  width: 730px;
+  float: left;
+  padding-right: 20px;
+}
+.main .context .part_left .desc .title {
+  font-size: 19px;
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+.main .context .part_left .desc .title .red {
+  color: red;
+}
+.main .context .part_left .desc .text {
+  font-size: 17px;
+  text-indent: 2em;
+  line-height: 30px;
+}
+.main .context .part_left .img {
+  float: left;
+  height: 340px;
+  width: 248px;
+  border: 1px solid #808080;
+}
+.main .context .part_right {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.main .context .part_right .img {
+  float: left;
+  height: 340px;
+  width: 248px;
+  border: 1px solid #808080;
+}
+.main .context .part_right .desc {
+  width: 730px;
+  float: right;
+}
+.main .context .part_right .desc .title {
+  margin-bottom: 15px;
+  float: left;
+  font-size: 19px;
+  font-weight: bold;
+}
+.main .context .part_right .desc .title .red {
+  color: #dd040f;
+}
+.main .context .part_right .desc .text {
+  clear: both;
+  text-indent: 2em;
+  line-height: 30px;
+  font-size: 17px;
+}

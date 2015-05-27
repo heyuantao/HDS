@@ -1,0 +1,130 @@
+.content {
+  width: 1000px;
+  margin: 0px auto;
+}
+.link {
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+.main {
+  width: 1000px;
+  margin: 0px auto;
+}
+.main .picShow {
+  width: 1000px;
+  height: 370px;
+  position: relative;
+  /*
+    .onPicTip{
+      width: 100px;
+      height: 30px;
+      background: darkred;
+      text-align: center;
+      position: absolute;
+      top: 270px;
+      left: 80px;
+      z-index: 10;
+      a{
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 30px;
+      }
+    }
+    */
+}
+.main .picShow .pic {
+  width: 1000px;
+  height: 370px;
+}
+.main .picShow .pic li {
+  list-style-type: none;
+}
+.main .picShow .pic li img {
+  width: 1000px;
+  height: 370px;
+}
+.main .mainSpliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+.main .infoShow {
+  width: 1000px;
+  margin: 0px auto;
+  height: 210px;
+}
+.main .infoShow .infoLeft {
+  float: left;
+  height: 200px;
+  width: 650px ;
+  margin: 1px;
+}
+.main .infoShow .infoLeft .infoTitle {
+  margin-bottom: 10px;
+}
+.main .infoShow .infoLeft .infoTitle .red {
+  color: #dd040f;
+}
+.main .infoShow .infoLeft .infoContent li {
+  list-style-type: none;
+  float: left;
+  margin-right: 15px;
+}
+.main .infoShow .infoLeft .infoContent li img {
+  height: 140px;
+  width: 140px;
+  border: 1px solid gray;
+}
+.main .infoShow .infoLeft .infoContent li h5 {
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: lighter;
+  font-size: 15px;
+  font-family: Microsoft YaHei;
+}
+.main .infoShow .infoLeft .infoContent li p {
+  width: 160px;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-indent: 2em;
+  font-size: 12px;
+}
+.main .infoShow .infoRight {
+  float: right;
+  height: 200px;
+  width: 340px;
+  margin: 1px;
+}
+.main .infoShow .infoRight .infoTitle {
+  margin-bottom: 10px;
+  padding-right: 5px;
+}
+.main .infoShow .infoRight .infoTitle .red {
+  color: #dd040f;
+}
+.main .infoShow .infoRight .infoContent {
+  width: 340px;
+  height: 200px;
+  text-indent: 2em;
+  font-size: 16px;
+  line-height: 27px;
+  word-break: break-all;
+  word-wrap: break-word;
+  padding-right: 5px;
+}
+.main .infoShow .infoRight .infoContent a {
+  text-decoration: none;
+  color: #dd040f;
+}

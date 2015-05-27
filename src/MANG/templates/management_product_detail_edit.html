@@ -1,0 +1,109 @@
+{% extends "management_base.html" %}
+
+{% block content %}
+<legend>
+    <h3 class="">编辑</h3>
+</legend>
+<div class="well">
+    <form method='post' action='{% url "product_detail_edit" id %}' class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{form.title.label}}" class="col-xs-2 control-label">商品名称</label>
+            <div class="col-xs-5">
+                <input type="text"  class="form-control" id="{{form.title.label}}" name="title" value="{{form.title.value}}">
+                {{ form.title.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.category.label}}" class="col-xs-2 control-label">商品类别</label>
+            <div class="col-xs-2">
+                <select class="form-control" id="{{form.category.label}}" name="category">
+                    <option value="-1">未选择</option>
+                    {% for choice in form.category.field.queryset %}
+                        <option value="{{choice.pk}}" {% ifequal choice.pk form.category.value %}selected{% endifequal %}>
+                       		{{choice.category_name}}
+                        </option>
+                    {% endfor %}
+                </select>
+                {{ form.category.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.net_content.label}}" class="col-xs-2 control-label">净含量</label>
+            <div class="col-xs-2">
+                <input type="text"  class="form-control" id="{{form.net_content.label}}" name="net_content" value="{{form.net_content.value}}">
+                {{ form.net_content.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.warranty_period.label}}" class="col-xs-2 control-label">保质期</label>
+            <div class="col-xs-2">
+                <input type="text"  class="form-control" id="{{form.warranty_period.label}}" name="warranty_period" value="{{form.warranty_period.value}}">
+                {{ form.warranty_period.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.nutritive_index.label}}" class="col-xs-2 control-label">营养成分</label>
+            <div class="col-xs-8">
+                <input type="text"  class="form-control" id="{{form.nutritive_index.label}}" name="nutritive_index" value="{{form.nutritive_index.value}}">
+                {{ form.nutritive_index.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.ingredient.label}}" class="col-xs-2 control-label">配料</label>
+            <div class="col-xs-8">
+                <input type="text"  class="form-control" id="{{form.ingredient.label}}" name="ingredient" value="{{form.ingredient.value}}">
+                {{ form.ingredient.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.preservation_method.label}}" class="col-xs-2 control-label">保存方法</label>
+            <div class="col-xs-8">
+                <input type="text"  class="form-control" id="{{form.preservation_method.label}}" name="preservation_method" value="{{form.preservation_method.value}}">
+                {{ form.preservation_method.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.front_picture.label}}" class="col-xs-2 control-label">正面照片</label>
+            <div class="col-xs-3">
+                <input type="file"   id="{{form.front_picture.label}}" name="front_picture" value="{{form.front_picture.value}}">
+                {{ form.front_picture.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.back_picture.label}}" class="col-xs-2 control-label">背面照片</label>
+            <div class="col-xs-5">
+                <input type="file"  id="{{form.back_picture.label}}" name="back_picture" value="{{form.back_picture.value}}">
+                {{ form.back_picture.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="pic" class="col-xs-2 control-label">详情照片组</label>
+            <div class="col-xs-2">
+                <select class="form-control" id="pic" name="product_pic">
+                	<option value="-1">未选择</option>
+                    {% for choice in form.product_pic.field.queryset %}
+                        <option value="{{choice.pk}}" {% ifequal choice.pk form.product_pic.value %}selected{% endifequal %}>
+                        	{{choice.name}}
+                        </option>
+                    {% endfor %}                    
+                </select>
+                {{ form.product_pic.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.display_on_first_page.label}}" class="col-xs-2 control-label">显示</label>
+            <div class="col-xs-2">
+                <input type="checkbox"  id="{{form.display_on_first_page.label}}" name="display_on_first_page" {% if form.display_on_first_page.value %}checked{% endif %}>是否在首页上
+                {{ form.display_on_first_page.errors|striptags }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-primary">确定</button>
+                <a href='{% url 'product_detail_list' %}' class="btn btn-default">返回</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

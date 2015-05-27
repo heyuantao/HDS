@@ -1,0 +1,133 @@
+* {
+  margin:0px;
+  padding: 0px;
+  font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体";
+}
+// the marcro less define
+.content{
+  width: 1000px;
+  margin: 0px auto;
+}
+.link{
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter{
+  .content;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+// this is the style less file
+.header{
+  /*
+  .topBar{
+    .content;
+    //background-color: rgba(202, 202, 202, 0.55);
+    height: 24px;
+    li{
+      a{
+        .link;
+        color: gray;
+      }
+      margin: 0px 10px;
+      float: right;
+      line-height: 24px;
+      list-style-type: none;
+    }
+  }*/
+  .headerBox{
+    .content;
+    @height:60px;
+    margin-top: 2px;
+    height: @height;
+    .logo{
+      float: left;
+      height: @height;
+      img{height: @height}
+    }
+    .nav{
+      float: right;
+      //background:#e61319 ;
+      .favorate{
+        float: right;
+        li{
+          float: right;
+          line-height: 11px;
+          height: 11px;
+          list-style-type: none;
+          margin-right: 10px;
+          a{
+            font-size: 11px;
+            text-decoration: none;
+            color: gray;
+          }
+        }
+      }
+      .menu{
+        height: @height;
+        line-height: @height;
+        clear: both;
+        li{
+          list-style-type: none;
+          margin:0px 14px;
+          float: right;
+          a{
+            .link;
+            font-size: 18px;
+            font-weight: bolder;
+            /*
+            color: #ffffff;
+            background: #e61319;
+            */
+          }
+          a:hover{
+            /*
+            color: yellow;
+            background: #e61319;
+            */
+          }
+        }
+      }
+    }
+  }
+  .headerSpliter{
+    .Spliter;
+  }
+  /*
+  .headerSpliter{
+    .content;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 1px;
+    border-bottom: 1px solid gray;
+  }*/
+}
+
+
+.footer{
+  .content;
+  margin-bottom: 50px;
+  color: gray;
+  font-size: 15px;
+  height: 15px;
+  line-height: 15px;
+  .footerLeft{
+    float: left;
+    .red{
+      text-decoration: none;
+      color: red;
+    }
+    .gray{
+      text-decoration: none;
+      color: #808080;
+    }
+  }
+  .footerRight{
+    float: right;
+    padding-left: 20px;
+    background: url(../images/icons/tel.jpg) no-repeat left center;
+  }
+}

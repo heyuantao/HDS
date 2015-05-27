@@ -1,0 +1,7 @@
+<uwsgi>
+    <socket>127.0.0.1:9001</socket>
+    <chdir>/var/uwsgi/HDS/</chdir>
+    <pythonpath>/var/uwsgi/HDS/</pythonpath>
+    <module>django_uwsgi</module>
+</uwsgi>
+

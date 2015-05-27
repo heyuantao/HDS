@@ -1,0 +1,38 @@
+{% extends "management_base.html" %}
+
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+    <strong>微信关键字回复设置</strong>
+</div>
+    <div class="panel-body">
+    <form method="post" action="{% url 'weixin_response_by_keywords_list' %}"><!--#will be replace to remove function-->
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-sm btn-danger pull-right" name='action' value="delete" style="margin-bottom: 10px">删除</button>
+            <button type="submit" class="btn btn-sm btn-warning pull-right" name='action' value="edit" style="margin-bottom: 10px">编辑</button>
+            <a href='{% url 'weixin_response_by_keywords_add' %}' class="btn btn-sm btn-primary pull-right" style="margin-bottom: 10px">添加</a>
+        </div>
+        <div class="col-xs-12">
+            <table class="table table-condensed table-bordered table-striped">
+                <thead>
+                    <th style="width: 80px">选择</th>
+                    <th>关键字</th>
+                    <th>回复内容</th>
+                </thead>
+                <tbody>
+                    {% for item in keywords_list %}
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="items" value="{{item.id}}"/>
+                            </td>
+                            <td>{{item.keywords}}</td>
+                            <td>{{item.response}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

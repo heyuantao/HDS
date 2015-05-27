@@ -1,0 +1,40 @@
+{% extends "management_base.html" %}
+
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>修改网站首页面图片</strong>
+    </div>
+    <div class="panel-body">
+        <div style="margin-top: 20px"></div>
+        <form method='post' action='{% url "first_page_picture_edit" id %}' class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+            <div class="form-group">
+                <label for="{{form.name.label}}" class="col-xs-2 control-label">图片名称</label>
+                <div class="col-xs-3">
+                    <input type="text"  class="form-control" id="{{form.name.label}}" name="name" value="{{form.name.value}}">
+                    {{ form.name.errors|striptags }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="{{form.link_to.label}}" class="col-xs-2 control-label">链接地址</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" id="{{form.link_to.label}}" name="link_to" value="{{form.link_to.value}}">
+                    {{ form.link_to.errors|striptags }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="file" class="col-xs-2 control-label">图片文件</label>
+                <div class="col-xs-10" id="file" >
+                    <input type="file" name="image">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-primary">确定</button>
+                    <a href='{% url 'first_page_picture_list' %}' class="btn btn-default">返回</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

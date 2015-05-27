@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block cssjs_files %}
+<link href="{{MEDIA_URL}}css/products.css" rel="stylesheet" type="text/css">
+<script src="{{MEDIA_URL}}bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+{% endblock %}
+
+
+
+{% block main %}
+<div class="main">
+    <div class="every_page_pic">
+        <img src="{{MEDIA_URL}}images/every_page_pic.png" alt="every_page_pic"/>
+    </div>
+    <div class="productsBox">
+        <div class="nav">
+            <ul>
+            	{% for type in product_type_list %}
+            		<li><a href="{% url 'products_category_with_type' type.id  1 %}">{{type.category_name}}</a></li>
+            	{% endfor %}
+            </ul>
+        </div><!--end nav-->
+        <div class="items">
+            <ul>
+            	{% for item in product_detail_page %} 
+            	    {% if forloop.counter == 6 %}	
+						</ul><ul>
+						<li>
+							<a href="{% url 'product_detail' item.id %}">
+							<img src="{{MEDIA_URL}}{{item.front_picture}}" alt="图片"/>
+							</a>
+							<p>{{item.title}}</p>
+						</li>
+					{% else %}
+						<li>
+							<a href="{% url 'product_detail' item.id %}">
+							<img src="{{MEDIA_URL}}{{item.front_picture}}" alt="图片"/>
+							</a>
+							<p>{{item.title}}</p>
+						</li>
+            	    {% endif %}  
+            	{% endfor %}
+            </ul><!--This code generate the 10 product show-->            
+        </div><!--end items-->
+    </div><!-- end productsBox-->
+    <div class="pages">
+	<ul>
+            <li><a href="{% url 'products_category_with_type' type_id 1 %}" >首页</a></li>
+	    {% if product_detail_page.has_previous %}
+		<li><a href="{% url 'products_category_with_type' type_id product_detail_page.previous_page_number %}" >上一页</a></li>
+	    {% else %}
+		<li><a href="{% url 'products_category_with_type' type_id 1 %}" >上一页</a></li>
+	    {% endif %}
+	    <li style='background:red'>
+		<a  style='color:white' href="{% url 'products_category_with_type' type_id product_detail_page.number %}" >{{product_detail_page.number}}</a>
+	    </li>
+	    {% if product_detail_page.has_next %}
+		<li><a href="{% url 'products_category_with_type' type_id product_detail_page.next_page_number %}" >下一页</a></li>
+	    {% else %}
+		<li><a href="{% url 'products_category_with_type' type_id product_detail_page.paginator.num_pages %}" >下一页</a></li>
+	    {% endif %}
+	    <li><a href="{% url 'products_category_with_type' type_id product_detail_page.paginator.num_pages %}" >未页</a></li>
+	    <li>共{{product_detail_page.paginator.num_pages}}页</li>
+        </ul>
+    </div>
+    <div class="mainSpliter"></div>
+
+</div><!--main end-->
+{% endblock %}

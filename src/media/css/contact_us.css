@@ -1,0 +1,91 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+.content {
+  width: 1000px;
+  margin: 0px auto;
+}
+.link {
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+.main {
+  width: 1000px;
+  margin: 0px auto;
+  /*
+  .map{
+    @height:100px;
+    .content;
+    height: @height;
+    background: mediumspringgreen;
+  }
+  */
+}
+.main .every_page_pic {
+  height: 100px;
+}
+.main .every_page_pic img {
+  height: 90px;
+  width: 1000px;
+  box-shadow: 3px 3px 3px;
+}
+.main .contact_us {
+  width: 1000px;
+  margin: 0px auto;
+  height: 550px;
+}
+.main .contact_us .left {
+  float: left;
+  width: 400px;
+  height: 550px;
+}
+.main .contact_us .left img {
+  padding-left: 20px;
+  padding-top: 10px;
+  height: 30px;
+  width: 80px;
+}
+.main .contact_us .left h4 {
+  margin-top: 20px;
+  padding-left: 20px;
+  line-height: 35px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+.main .contact_us .left p {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 28px;
+}
+.main .contact_us .right {
+  float: right;
+  width: 570px;
+  height: 490px;
+  padding-left: 15px;
+  padding-top: 30px;
+}
+.main .contact_us .right .map {
+  width: 550px;
+  height: 510px;
+  box-shadow: 5px 5px 3px;
+}
+.main .mainSpliter {
+  width: 1000px;
+  margin: 0px auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}

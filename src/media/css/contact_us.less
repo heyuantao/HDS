@@ -1,0 +1,87 @@
+* {
+  margin:0px;
+  padding: 0px;
+  font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体";
+}
+// the marcro less define
+.content{
+  width: 1000px;
+  margin: 0px auto;
+}
+.link{
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter{
+  .content;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+// this is the style less file
+.main{
+  .content;
+  .every_page_pic{
+    height: 100px;
+    img{
+      height: 90px;
+      width: 1000px;
+      box-shadow: 3px 3px 3px;
+    }
+  }
+  .contact_us{
+    @height:550px;
+    .content;
+    height: @height;
+    .left{
+      float: left;
+      width: 400px;
+      height: @height;
+      img{
+        padding-left: 20px;
+        padding-top: 10px;
+        height: 30px;
+        width: 80px;
+      }
+      h4{
+        margin-top: 20px;
+        padding-left: 20px;
+        line-height: 35px;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+      }
+      p{
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 28px;
+      }
+    }
+    .right{
+      float: right;
+      width: 570px;
+      height: @height - 60px;
+      //background: blue;
+      padding-left: 15px;
+      padding-top: 30px;
+      .map{
+        width:550px;
+        height:550px - 40px ;
+        box-shadow: 5px 5px 3px;
+      }
+    }
+  }
+  .mainSpliter{
+    .Spliter;
+  }
+  /*
+  .map{
+    @height:100px;
+    .content;
+    height: @height;
+    background: mediumspringgreen;
+  }
+  */
+}

@@ -1,0 +1,15 @@
+{
+  "name": "myfocus",
+  "homepage": "https://github.com/koen301/myfocus",
+  "version": "2.0.4",
+  "_release": "2.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.4",
+    "commit": "0a68cad4cecfba04f28757e6e4a2270381ca750b"
+  },
+  "_source": "git://github.com/koen301/myfocus.git",
+  "_target": "~2.0.4",
+  "_originalSource": "koen301/myfocus",
+  "_direct": true
+}

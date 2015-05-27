@@ -1,0 +1,172 @@
+
+// this is the style less file
+.content{
+  width: 1000px;
+  margin: 0px auto;
+}
+.link{
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.Spliter{
+  .content;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  height: 1px;
+  border-bottom: 1px solid gray;
+}
+
+.mask{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+  background: gray;
+  opacity: 0.8;
+  display: none;
+}
+
+.main{
+  .content;
+  .every_page_pic{
+    height: 100px;
+    img{
+      height: 90px;
+      width: 1000px;
+      box-shadow: 3px 3px 3px;
+    }
+  }
+  .mainSpliter{
+    .Spliter;
+  }
+  .productsBox{
+    //height: 700px;
+    margin-bottom: 5px;
+    .nav{
+      width: 1002px;
+      overflow: hidden;
+      border-right: 1px solid #808080;
+      ul{
+        width: 1004px;
+        border-right: 1px solid #808080;
+        li{
+          list-style-type: none;
+          float: left;
+          height: 33px;
+          line-height: 33px;
+          width: 199px;
+          text-align: center;
+          border: 1px solid gray;
+          border-right: 0px;
+          a{
+            width: 199px;
+            text-decoration: none;
+            color: #000000;
+            font-size: 16px;
+            background-color: #ffffff;
+            display: block;
+          }
+          a:hover{
+            color: #ffffff;
+            background-color: #e7141a;
+          }
+        }
+      }
+    }
+    .items{
+      @height:480px;
+      border: 1px solid gray;
+      border-top: 0px;
+      width: 1000px;
+      padding-top: 5px;
+      overflow: hidden;
+      clear: both;
+      .leftside{
+        width: 500px;
+        height: @height;
+        float: left;
+        //background: red;
+        img{
+          width: 440px;
+          height: 440px;
+          margin:20px 20px 0px 20px;
+          border: 1px solid gray;
+        }
+      }
+      .rightside{
+        width: 460px;
+        height: @height;
+        float: right;
+        //background: bisque;
+        padding: 0px 20px;
+        .title{
+          font-size: 25px;
+          font-weight: bold;
+          margin-top: 35px;
+          margin-bottom: 20px;
+        }
+        table{
+          //border: 1px solid #000000;
+          //border-collapse: collapse;
+          font-size: 17px;
+          color: rgba(60, 60, 60, 0.91);
+          .side{
+            //border: 1px solid #000000;
+            padding: 5px 0px;
+            width: 90px;
+            font-weight: bold;
+            vertical-align: top;
+          }
+          .cont{
+            //border: 1px solid #000000;
+            padding: 5px 0px;
+            width: 400px;
+            vertical-align: top;
+          }
+          margin-bottom: 20px;
+        }
+        .pics_title{
+          font-size: 15px;
+          color: rgba(143, 143, 143, 0.80);
+          margin-bottom: 20px;
+        }
+        ul li{
+          list-style-type: none;
+          float: left;
+          margin-right: 10px;
+          img{
+            width: 40px;height: 40px;
+            border: 1px solid gray;
+          }
+        }
+        .buy_link {
+          clear: both;
+          padding-top: 20px;
+          a {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .infobox{
+      min-height: 500px;
+      border: 1px solid gray;
+      border-top: 0px;
+      width: 1000px;
+      overflow: hidden;
+      li{
+        padding: 5px 10px;
+        float: left;
+        img{
+          width: 980px;
+        }
+      }
+    }
+  }
+
+
+}

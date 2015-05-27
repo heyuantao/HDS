@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="{{MEDIA_URL}}bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="{{MEDIA_URL}}bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link href="{{MEDIA_URL}}background_css/management_base.css" rel="stylesheet" type="text/css">
+    <script src="{{MEDIA_URL}}bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="{{MEDIA_URL}}bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+    {% load urltags %}
+    <!--
+    <script src="{{MEDIA_URL}}bower_components/angular/angular.js" type="text/javascript"></script>
+    <script src="{{MEDIA_URL}}js/controller/hds.mang.base.js" type="text/javascript"></script>
+    <script src="{{MEDIA_URL}}bower_components/angular-bootstrap/ui-bootstrap.js" type="text/javascript"></script>
+    -->
+    <title>网站后台管理</title>
+</head>
+<body>
+    <div id="header-top">
+        <div class="container">
+            <div class="row">
+                <h3 id="title" class="col-md-2"><strong>网站后台管理</strong></h3>
+                <h5>
+                    <a id="login" class="btn btn-danger btn-sm pull-right" href="{% url 'logout' %}" "><strong>注销</strong></a>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div id="body" >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="list-group">
+                        <div >
+                            <div class="list-group-item active"><strong>网站数据设置</strong></div>
+                            <a class="list-group-item {% ifequal request.path|urlPart:2 'first_page_picture'%}choice{% endifequal %}"
+                               href='{% url 'first_page_picture_list' %}' >网站首页面图片</a>
+                            <a class="list-group-item {% ifequal request.path|urlPart:2 'category'%}choice{% endifequal %}"
+                               href='{% url 'category_setting' %}' >产品分类</a>
+                            <a class="list-group-item {% ifequal request.path|urlPart:2 'product_detail'%}choice{% endifequal %}"
+                               href='{% url 'product_detail_list' %}' >商品详情</a>
+                            <a class="list-group-item {% ifequal request.path|urlPart:2 'product_picture'%}choice{% endifequal %}"
+                               href='{% url 'product_picture_list' %}' >商品广告</a>
+                        </div>
+                    </div>
+                    <div class="list-group" >
+                        <div >
+                            <div class="list-group-item active"><strong>微信数据设置</strong></div>
+                            <a class="list-group-item {% ifequal request.path|urlPart:2 'weixin_respon_by_keywords'%}choice{% endifequal %}"
+                               href='{% url 'weixin_response_by_keywords_list' %}' >自动回复设置</a>
+                            <a class="list-group-item disabled"
+                               href='#' >网站链接设置</a>
+                        </div>
+                    </div>
+
+                    <div class="list-group" >
+                        <div >
+                            <div class="list-group-item active"><strong>用户设置</strong></div>
+                            <a class="list-group-item disabled" href='#' >修改密码</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-10">
+                    {% block content %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>请点击左侧面板进行详细设置</strong>
+                            </div>
+                            <div class="panel-body">
+                                请选择左侧标签进入相应区域完成各项功能设置
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+        </div>
+    </div>
+
+</body>
+</html>

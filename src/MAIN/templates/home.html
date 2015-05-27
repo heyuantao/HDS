@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block cssjs_files %}
+	<link href="{{MEDIA_URL}}css/home.css" rel="stylesheet" type="text/css">
+    <script src="{{MEDIA_URL}}bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+
+    <!--myfocus setting -->
+    <script src="{{MEDIA_URL}}bower_components/myfocus/dist/myfocus-2.0.4.min.js" type="text/javascript"></script>
+    <script src="{{MEDIA_URL}}bower_components/myfocus/dist/mf-pattern/mF_classicHB.js" type="text/javascript"></script>
+    <link href="{{MEDIA_URL}}bower_components/myfocus/dist/mf-pattern/mF_classicHB.css" type="text/css" rel="stylesheet"/>
+    <!--myfocus setting  end-->
+{% endblock %}
+	
+{% block main %}
+	<div class="main">
+        <div class="picShow" id="picShow">
+            <div class="pic" >
+                <ul><!--this img src should generate by django templates-->
+                	{% for image in first_page_pics%}                		
+                		<li>
+                			<a href='{{image.link_to}}'>
+                				<img src="{{MEDIA_URL}}{{image.image}}" />
+                			</a>
+                		</li>
+                	{% endfor %}
+                </ul>
+            </div>
+            <!--
+            <div class="onPicTip">
+                <a herf="#" onclick="alert('jump')">特色产品</a>
+            </div>
+            -->
+        </div><!--end picShow -->
+        <script type="text/javascript">
+            myFocus.set({id:'picShow'});
+        </script>
+        <div class="mainSpliter"></div>
+        <div class="infoShow">
+            <div class="infoLeft">
+                <h3 class="infoTitle">特色<span class="red">产品</span></h3>
+                <div class="infoContent">
+                    <ul>
+                    	{% for item in product_to_show %}
+                    		<li>
+	                            <a href="{% url 'product_detail' item.id %}" >
+	                                <img src="{{MEDIA_URL}}{{item.front_picture}}" alt="pro" >
+	                            </a>
+	                            <h5>{{item.title}}</h5>
+	                            <!--
+	                            <p>	        
+	                            	营养成分：{{item.nutritive_index}}                        
+	                                <span><a href="{% url 'product_detail' item.id %}">详情</a></span>
+	                            </p>
+	                            -->
+                        	</li>
+                    	{% endfor %}
+                    </ul>
+                </div><!--infoContent end-->
+            </div><!--infoLeft-->
+            <div class="infoRight">
+                <h3 class="infoTitle">关注<span class="red">蝴蝶山</span></h3>
+                <p class="infoContent">
+                    郑州蝴蝶山食品有限公司是一家从事挂面，面叶生产和销售的企业。公司位于优质小麦产区和中国挂面工业发源地--荥阳，优越的地理位置给优质产品的生产提供了保障。
+                    三十年来企业以生产高品质挂面和倡导健康的饮食为己任，在挂面生产上严格把关。
+                    <span><a href="{% url 'about_us' %}">了解更多</a></span>
+                </p>
+                </p>
+            </div><!--infoRight-->
+        </div><!--infoShow end-->
+        <div class="mainSpliter"></div>
+    </div><!--main end-->
+{% endblock %}

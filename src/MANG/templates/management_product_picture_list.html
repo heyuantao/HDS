@@ -1,0 +1,40 @@
+{% extends "management_base.html" %}
+
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+    <strong>产品介绍图片</strong>
+</div>
+    <div class="panel-body">
+    <form method="post" action="{% url 'product_picture_list' %}"><!--#will be replace to remove function-->
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-sm btn-danger pull-right" name='action' value="delete" style="margin-bottom: 10px">删除</button>
+            <button type="submit" class="btn btn-sm btn-warning pull-right" name='action' value="edit" style="margin-bottom: 10px">编辑</button>
+            <a href='{% url 'product_picture_add' %}' class="btn btn-sm btn-primary pull-right" style="margin-bottom: 10px">添加</a>
+        </div>
+        <div class="col-xs-12">
+            <table class="table table-condensed table-bordered table-striped">
+            <thead>
+                <th>选择</th>
+                <th>图片名称</th>
+                <th>图片1</th>
+                <th>图片2</th>
+                <th>图片3</th>
+            </thead>
+            <tbody>
+                {% for item in product_picture_list %}
+                    <tr>
+                        <td><input type="checkbox" name="items" value="{{item.id}}"/></td>
+                        <td>{{item.name}}</td>
+                        <td><a href="{{MEDIA_URL}}{{item.info1_picture}}">{{MEDIA_URL}}{{item.image}}</a></td>
+                        <td><a href="{{MEDIA_URL}}{{item.info2_picture}}">{{MEDIA_URL}}{{item.image}}</a></td>
+                        <td><a href="{{MEDIA_URL}}{{item.info3_picture}}">{{MEDIA_URL}}{{item.image}}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}

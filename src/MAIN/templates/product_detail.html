@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block cssjs_files %}
+	<link href="{{MEDIA_URL}}css/product_detail.css" rel="stylesheet" type="text/css">
+
+    <script src="{{MEDIA_URL}}bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="{{MEDIA_URL}}bower_components/lightbox/js/lightbox.js"></script>
+    <link href="{{MEDIA_URL}}bower_components/lightbox/css/lightbox.css" rel="stylesheet" type="text/css">
+{% endblock %}
+	
+{% block main %}
+<div class="main">
+    <div class="every_page_pic">
+        <img src="{{MEDIA_URL}}images/every_page_pic.png" alt="every_page_pic"/>
+    </div>
+    
+
+    <div class="productsBox">
+        <div class="nav">
+            <ul>
+                {% for type in product_type_list %}
+            	    <li><a href="{% url 'products_category_with_type' type.id 1 %}">{{type.category_name}}</a></li>
+            	{% endfor %}
+            </ul>
+        </div><!--end nav-->
+        <div class="items">
+            <div class="leftside">
+                <img src="{{MEDIA_URL}}{{product_item.front_picture}}"/>
+            </div><!--leftside end-->
+            <div class="rightside">
+                <p class="title">{{product_item.title}}</p>
+                <table>
+                    <tr>
+                        <td class="side">净含量:</td>
+                        <td class="cont">{{product_item.net_content}}克</td>
+                    </tr>
+                    <tr>
+                        <td class="side">保质期:</td>
+                        <td class="cont">{{product_item.warranty_period}}个月</td>
+                    </tr>
+                    <tr>
+                        <td class="side">营养成分:</td>
+                        <td class="cont">{{product_item.nutritive_index}}</td>
+                    </tr>
+                    <tr>
+                        <td class="side">配料成分:</td>
+                        <td class="cont">{{product_item.ingredient}}</td>
+                    </tr>
+                    <tr>
+                        <td class="side">储藏方法:</td>
+                        <td class="cont">{{product_item.preservation_method}}</td>
+                    </tr>
+                </table>
+                <p class="pics_title">更多商品图片</p>
+                <ul>
+                    <li><a href="{{MEDIA_URL}}{{product_item.front_picture}}" data-lightbox="image-1" data-title="产品展示"><img src="{{MEDIA_URL}}{{product_item.front_picture}}"></a></li>
+                    <li><a href="{{MEDIA_URL}}{{product_item.back_picture}}" data-lightbox="image-1" data-title="产品展示"><img src="{{MEDIA_URL}}{{product_item.back_picture}}"></a></li>
+                </ul>
+                <div class='buy_link'>
+                    <a href="{% url 'contact_us' %}">联系供应商</a>
+                </div>
+            </div><!--rightside end-->
+        </div><!--end items-->
+        <div class="infobox">
+            <ul>
+                <li><img src="{{MEDIA_URL}}{{product_item.product_pic.info1_picture}}"/></li>
+                <li><img src="{{MEDIA_URL}}{{product_item.product_pic.info2_picture}}"/></li>
+                <li><img src="{{MEDIA_URL}}{{product_item.product_pic.info3_picture}}"/></li>
+            </ul>
+        </div><!--end infoBox-->
+    </div><!-- end productsBox-->
+
+    <div class="mainSpliter"></div>
+</div><!--main end-->
+{% endblock %}
